@@ -28,12 +28,13 @@ function updateLiveTime() {
   updateLiveTime();
 
 
-
+  // Adding Smooth Scrolling
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true,
 });
 
+  // funtion for the animations
 function firstPageAnim(){
     var tl = gsap.timeline();
 
@@ -60,6 +61,7 @@ function firstPageAnim(){
 
 }
 
+  // When cursor move the circle follows with the animation of dragging 
 function circleChaptaKaro(){
 
     var xscale = 1;
@@ -86,7 +88,7 @@ function circleChaptaKaro(){
     });
 }
 
-
+  // function for the mouse follower
 function circleMouseFollower(xscale, yscale){
     window.addEventListener("mousemove", function(dets){
         document.querySelector("#minicircle").style.transform = 
@@ -98,21 +100,21 @@ circleChaptaKaro();
 circleMouseFollower();
 firstPageAnim();
 
-document.querySelectorAll(".elems").forEach(function(elems){
-    var rotate = 0;
-    var diffrot = 0;
+// document.querySelectorAll(".elems").forEach(function(elems){
+//     var rotate = 0;
+//     var diffrot = 0;
 
-    document.querySelectorAll(".elems").forEach(function (elems) {
-        var rotate = 0;
-        var diffrot = 0;
+//     document.querySelectorAll(".elems").forEach(function (elems) {
+//         var rotate = 0;
+//         var diffrot = 0;
       
-        elems.addEventListener("mouseleave", function (dets) {
-          gsap.to(elems.querySelector("img"), {
-            opacity: 0,
-            ease: Power2,
-            duration: 0.5,
-          });
-        });
+//         elems.addEventListener("mouseleave", function (dets) {
+//           gsap.to(elems.querySelector("img"), {
+//             opacity: 0,
+//             ease: Power2,
+//             duration: 0.5,
+//           });
+//         });
     
         
 
@@ -128,5 +130,5 @@ document.querySelectorAll(".elems").forEach(function(elems){
     //       rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
     //     });
     //   });
-    });
-});
+    // });
+// });
